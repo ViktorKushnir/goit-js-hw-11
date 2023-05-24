@@ -1,7 +1,7 @@
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 import Notiflix from 'notiflix';
-import searchImages from './pixabayApi';
+import searchImages from './PixabayApi';
 import loadMoreBtn from './loadMore.js';
 import {createMarkup} from './markup';
 
