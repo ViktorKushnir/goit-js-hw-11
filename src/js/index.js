@@ -102,4 +102,3 @@ function onError(er) {
     'Sorry, there are no images matching your search query. Please try again.'
   );
 }
-// finish
