@@ -3,7 +3,7 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 import Notiflix from 'notiflix';
 import searchImages from './pixabay';
 import loadMoreBtn from './loadMore.js';
-import {createMarkup} from './markup';
+import { createMarkup } from './markup';
 
 const refs = {
   formEl: document.getElementById('search-form'),
@@ -102,4 +102,13 @@ function onError(er) {
     'Sorry, there are no images matching your search query. Please try again.'
   );
 }
-// finish
+
+function handleScroll() {
+  const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+
+  if (scrollTop + clientHeight >= scrollHeight - 5) {
+    onClick();
+  }
+}
+
+window.addEventListener('scroll', handleScroll);

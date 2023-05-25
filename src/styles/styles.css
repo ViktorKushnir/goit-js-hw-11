@@ -53,11 +53,13 @@ button:hover {
   box-shadow: 5px 8px 14px 0px rgba(0, 0, 0, 0.68);
 }
 
+
+
 .info {
   display: flex;
   gap: 10px;
   max-width: 320px;
-  background-color: yellowgreen;
+  background-color: green;
   border-radius: 0 0 5px 5px;
 }
 
