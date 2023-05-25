@@ -1,7 +1,7 @@
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 import Notiflix from 'notiflix';
-import searchImages from './pixabay';
+import searchImages from './pixabayApi';
 import loadMoreBtn from './loadMore.js';
 import { createMarkup } from './markup';
 
@@ -39,20 +39,10 @@ function onSubmit(ev) {
     });
   }
 }
-function scroll() {
-  const { height: cardHeight } =
-    refs.divEl.firstElementChild.getBoundingClientRect();
-
-  window.scrollBy({
-    top: cardHeight * 2,
-    behavior: 'smooth',
-  });
-}
 
 function onClick() {
   if (newImage.page > 1 && newImage.page > Math.ceil(newImage.totalHits / 40)) {
     newLoadMoreBtn.hideBtn();
-    scroll();
     return Notiflix.Notify.warning(
       "We're sorry, but you've reached the end of search results."
     );
@@ -86,7 +76,6 @@ async function getRestPage() {
 
 function updateMarkup(markup) {
   refs.divEl.insertAdjacentHTML('beforeend', markup);
-  scroll();
 }
 function initializeLightbox() {
   const lightbox = new SimpleLightbox('.gallery__link', options);

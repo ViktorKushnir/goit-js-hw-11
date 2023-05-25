@@ -30,7 +30,7 @@ input:focus {
   cursor: pointer;
 }
 
-button:hover {
+.btn:hover {
   background-color: rgb(24, 93, 24);
 }
 
@@ -75,12 +75,13 @@ button:hover {
   justify-content: center;
 }
 .load-more {
+  
   border-radius: 5px;
-  background-color: green;
+  background-color: transparent;    /* green; */
   border: none;
   padding: 10px 15px;
   font-size: 15px;
-  color: wheat;
-  cursor: pointer;
+  color: transparent;      /* wheat*/
+  /* cursor: pointer; */
   margin: 30px;
 }
